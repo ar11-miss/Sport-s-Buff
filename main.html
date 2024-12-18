@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Enthusiasts Meetup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #c17bd8;
+            color: rgb(12, 12, 12);
+            padding: 15px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #4e4e4e;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 15px;
+        }
+        nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .hero {
+            text-align: center;
+            background: url('https://via.placeholder.com/') no-repeat center center/cover;
+            color: rgb(34, 34, 34);
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+        }
+        .hero p {
+            font-size: 1.2em;
+        }
+        #about {
+            padding: 50px;
+            background-color: #ececec;
+            text-align: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sport's Buff</h1>
+    </header>
+    
+    
+        
+        <div class="hero">
+            <h1>Welcome to the Sports Community champss!</h1>
+            <p>Connect, meet, and play with sports enthusiasts near you.</p>
+            <!-- Start Button -->
+            <a href="login.html">
+                <button style="background-color: #8322a3; color: white; border: none; padding: 10px 20px; font-size: 1.2em; border-radius: 5px; cursor: pointer;">
+                    Start
+                </button>
+            </a>
+        </div>
+        
+    </div>
+    
+    <!-- About Section -->
+    <nav>
+      <a href="about.html">About</a>
+      <a href="#event">Events</a>
+      <a href="contact.html">Contact</a>
+  </nav>
+  
+  
+
+    <script>
+        // Smooth scroll functionality
+        document.getElementById('about-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

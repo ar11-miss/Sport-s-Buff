@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #8322a3;
+            color: white;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            animation: slideIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        /* Confetti Animation */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            opacity: 0.8;
+            animation: confetti-fall 5s infinite;
+        }
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Congratulations! 🎉</h1>
+        <p id="userMessage"></p>
+    </div>
+
+    <!-- Confetti Animation -->
+    <script>
+      // Retrieve the current user count from Local Storage
+      const userCount = localStorage.getItem('userCount') || '1';
+  
+      // Display the count in the congratulations message
+      document.getElementById('userMessage').innerText = `You are the ${userCount}th user!`;
+  </script>
+<script>
+      
+
+      // Generate random confetti
+      function createConfetti() {
+          const confetti = document.createElement('div');
+          confetti.classList.add('confetti');
+          confetti.style.left = `${Math.random() * 100}vw`;
+          confetti.style.backgroundColor = getRandomColor();
+          confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+          document.body.appendChild(confetti);
+
+          setTimeout(() => confetti.remove(), 5000);
+      }
+
+      function getRandomColor() {
+          const colors = ['#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#ff99ac', '#fbb1bd'];
+          return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      // Generate multiple confetti
+      for (let i = 0; i < 50; i++) {
+          createConfetti();
+      }
+  </script>  
+</body>
+</html>
